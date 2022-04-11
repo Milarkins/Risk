@@ -31,7 +31,7 @@ public class Transportation : NetworkBehaviour
             {
                 return;
             }
-            if(playersConnected <= neededToStart)//2
+            if(playersConnected <= neededToStart - 1)//2
             {
                 _startButton.interactable = false;
             } else
