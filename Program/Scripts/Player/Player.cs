@@ -15,8 +15,6 @@ public class Player : NetworkBehaviour
     private Material playerMaterialClone;
     [SyncVar(hook = nameof(OnColorChanged))]
     public Color playerColor = Color.white;
-    public Color[] colorlist;
-
     private SetColor sc;
 
     void OnColorChanged(Color _Old, Color _New)
@@ -110,7 +108,7 @@ public class Player : NetworkBehaviour
             return;
         }
         sc = FindObjectOfType<SetColor>();
-        Color color = colorlist[sc.playerColorNum];
+        Color color = sc.colorlist[sc.colorNum];
         CmdSetupPlayer(color);
     }
 

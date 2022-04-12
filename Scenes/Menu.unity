@@ -948,7 +948,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9069669e70411a04482f3e8afa68fcca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerColorNum: 0
+  colorlist:
+  - {r: 1, g: 0.43867922, b: 0.43867922, a: 1}
+  - {r: 0.41037738, g: 0.8105731, b: 1, a: 1}
+  - {r: 0.97387004, g: 1, b: 0.41037738, a: 1}
+  - {r: 0.504717, g: 1, b: 0.63719904, a: 1}
+  - {r: 1, g: 0.7028302, b: 0.99066156, a: 1}
+  - {r: 0.74765724, g: 0.5613208, b: 1, a: 1}
 --- !u!114 &599510040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2108,7 +2114,7 @@ MonoBehaviour:
   _startButton: {fileID: 752465673}
   txt: {fileID: 174028748}
   playersConnected: 0
-  neededToStart: 2
+  neededToStart: 1
 --- !u!114 &1403714009
 MonoBehaviour:
   m_ObjectHideFlags: 0

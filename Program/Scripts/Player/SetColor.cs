@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class SetColor : MonoBehaviour
 {
-    public int playerColorNum;
+    public int colorNum;
+    public Color[] colorlist;
     void Start()
     {
-        playerColorNum = Random.Range(1, 6);
+        colorNum = Random.Range(0, colorlist.Length);
     }
 }
