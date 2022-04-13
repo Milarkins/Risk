@@ -26,7 +26,6 @@ public class Transportation : NetworkBehaviour
             if(scene.name == "Menu")
             {
                 txt.text = playersConnected + "/6";
-                StartButton.SetActive(true);
             } else
             {
                 return;
@@ -41,7 +40,6 @@ public class Transportation : NetworkBehaviour
         } else
         {
             txt.text = "waiting to start...";
-            StartButton.SetActive(false);
         }
     }
 
