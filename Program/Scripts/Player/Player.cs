@@ -117,4 +117,9 @@ public class Player : NetworkBehaviour
     {
         playerColor = _col;
     }
+
+    public override void OnStartLocalPlayer()
+    {
+         Camera.main.GetComponent<CameraFollow>().setTarget(gameObject.transform);
+    }
 }
