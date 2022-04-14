@@ -39,7 +39,7 @@ public class Transportation : NetworkBehaviour
             }
         } else
         {
-            txt.text = "waiting to start...";
+            txt.text = "waiting to start";
         }
     }
 

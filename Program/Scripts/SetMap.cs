@@ -1,19 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class SetMap : MonoBehaviour
+public class SetMap : NetworkBehaviour
 {
     public GameObject[] maps;
-    private GameObject map, mapNumLib;
-    private ChooseMap cm;
+    private GameObject map;
+    [SyncVar]
+    int currentMap;
     
     void Start()
     {
-        mapNumLib = GameObject.FindWithTag("Spawn");
-        cm = mapNumLib.GetComponent<ChooseMap>();
+        GenMap();
+    }
+
+    public void GenMap()
+    {
+        Choose();
+        Invoke("Set", 0.5f);
+    }
+
+    void Set()
+    {
         Destroy(map);
-        map = Instantiate(maps[cm.finalIndex]);
+        map = Instantiate(maps[currentMap]);
         map.transform.parent = this.transform;
+    }
+
+    void Choose()
+    {
+        if(!isServer) return;
+        currentMap = Random.Range(0, maps.Length);
     }
 }
